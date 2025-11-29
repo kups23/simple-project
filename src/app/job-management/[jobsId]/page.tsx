@@ -55,10 +55,10 @@ async function JobManagement({params}:{params:Promise<{jobsId:string}>}) {
       <div className='bg-[#f9f9f9] gap-10 px-4 py-7 flex flex-col'>
 
         {/* Profile and Quick Action Section */}
-        <div className='flex mb-4 justify-start gap-10'>
+        <div className='flex w-full mb-4 justify-start gap-10'>
 
            {/* Profile Information */}
-          <div className='flex flex-col'>
+          <div className='basis-[50%] flex flex-col'>
             <div className='flex mb-6  gap-4 items-center '>
               
               {/* Profile photo section */}
@@ -90,7 +90,7 @@ async function JobManagement({params}:{params:Promise<{jobsId:string}>}) {
           </div>
 
           {/* Quick Action Section */}
-          <div className='flex flex-col gap-3 w-full'>
+          <div className='basis-[50%] flex flex-col gap-3 w-full'>
             <span className='text-black font-bold '>Quick Actions</span>
             <QuickActionButtons text='Shortlist Candidate' icon={<PeopleAltIcon />} href='#' variant='contained' color='primary' />
             
