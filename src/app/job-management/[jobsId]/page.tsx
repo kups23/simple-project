@@ -3,7 +3,7 @@ import { Breadcrumbs, Typography, Stack, Avatar } from '@mui/material';
 import userImg from '../../../../public/images/profile/avarter.jpg';
 import Link from "next/link";
 import MatchButton from '../../reusableComponent/MatchedButton';
-import { applicants, Applicant } from '../../datas/applicant.ts';
+import { applicants, Applicant } from '../../datas/applicant.tsx';
 import Chip from '@mui/material/Chip';
 import QuickActionButtons from '../../reusableComponent/QuickActionButtons';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
