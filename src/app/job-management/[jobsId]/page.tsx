@@ -1,31 +1,31 @@
-
+'use client';
 import { Breadcrumbs, Typography, Stack, Avatar } from '@mui/material';
-import userImg from '../../../../public/images/profile/avarter.jpg';
-import Link from "next/link";
 import MatchButton from '../../reusableComponent/MatchedButton';
-import { applicants, Applicant } from '../../datas/applicant.tsx';
+import { applicants, Applicant } from '../../datas/applicant';
 import Chip from '@mui/material/Chip';
 import QuickActionButtons from '../../reusableComponent/QuickActionButtons';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ClearIcon from '@mui/icons-material/Clear';
-
+import MuiLink from '@mui/material/Link';
+import NextLink from 'next/link';
 
 
 
 async function JobManagement({params}:{params:Promise<{jobsId:string}>}) {
   //Breadcum settings
   const breadcrumbs = [
-    <Link underline="hover" href="/jobs" key="1" color="inherit">
+    <MuiLink component={NextLink} href="/jobs" key="1" underline="hover" color="inherit">
       Jobs
-    </Link>,
-        <Link underline="hover" href="/jobs" key="2" color="inherit">
-        Senior Frontend Developer
-      </Link>,
+    </MuiLink>,
+    <MuiLink component={NextLink} href="/jobs" key="2" underline="hover" color="inherit">
+      Senior Frontend Developer
+    </MuiLink>,
     <Typography key="3" sx={{ color: 'text.primary' }}>
       Job Management
     </Typography>,
   ];
+  
 
   //-----We getting details of a particular user----
   //get the id passed in url
@@ -33,6 +33,10 @@ async function JobManagement({params}:{params:Promise<{jobsId:string}>}) {
 
   //find the user in stored data
   const userDetails = applicants.find((user: Applicant) => user.id === parseInt(jobUserId));
+
+  if (!userDetails) {
+    return <div className="text-gray-400">No Data</div>
+  }
   
 
   return (
@@ -90,9 +94,9 @@ async function JobManagement({params}:{params:Promise<{jobsId:string}>}) {
             <span className='text-black font-bold '>Quick Actions</span>
             <QuickActionButtons text='Shortlist Candidate' icon={<PeopleAltIcon />} href='#' variant='contained' color='primary' />
             
-            <QuickActionButtons text='Schedule Interviews' icon={<CalendarTodayIcon />} href='#' variant='outlined' color='text' />
+            <QuickActionButtons text='Schedule Interviews' icon={<CalendarTodayIcon />} href='#' variant='outlined' color='inherit' />
             
-            <QuickActionButtons text='Decline Application' icon={<ClearIcon/>} href='#' variant='outlined' color='red' />
+            <QuickActionButtons text='Decline Application' icon={<ClearIcon/>} href='#' variant='outlined' color='error' />
           </div>
         </div>
         <hr />

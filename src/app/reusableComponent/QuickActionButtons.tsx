@@ -8,12 +8,12 @@ import Link from "next/link";
 type QuickActionButtonProps = {
   text: string;
     icon?: ReactNode;
-    color?: "primary" | "text" | "red";
+    color?: "primary" | "inherit" | "error";
     variant: 'contained' | 'outlined';
     href: string;
 };
 
-const QuickActionButtons = ({ text, icon,href, variant='outlined',color='text',}: QuickActionButtonProps) => {
+const QuickActionButtons = ({ text, icon,href, variant='outlined',color='inherit',}: QuickActionButtonProps) => {
 
   return (
     <Link href={href} className="w-full">
@@ -30,7 +30,7 @@ const QuickActionButtons = ({ text, icon,href, variant='outlined',color='text',}
                 color:
                   color === "primary"
                     ? undefined              // use MUI primary text color
-                    : color === "red"
+                    : color === "error"
                     ? "red"                  // red text
                     : "gray",                // gray text for "text"
               
