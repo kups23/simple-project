@@ -12,7 +12,7 @@ const SideBar = () => {
 
   return (
     //  side bar menus
-      <div className="text-gray-400 py-12 flex flex-col px-4 gap-2">
+      <div className="text-gray-400 py-12 flex  flex-col  px-4 gap-2">
         
           {/* dashboard */}
         <SideBarButtons

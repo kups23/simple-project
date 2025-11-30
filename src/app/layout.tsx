@@ -36,11 +36,11 @@ export default function RootLayout({
       >
         <Header />
         <div className="h-screen w-full bg-gray-100 flex gap-4">
-        <div className="basis-[20%] shadow-md border-r border-gray-300">
+        <div className="max-md:hidden basis-[20%] shadow-md border-r border-gray-300">
           <SideBar />
         </div>
 
-        <div className="basis-[80%]">
+        <div className="basis-[80%] max-md:basis-full">
           {children}
         </div>
         </div>

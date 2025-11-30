@@ -24,7 +24,11 @@ const SideBarButtons = ({ text, icon, href, currentPath }: SideBarButtonProps) =
         fullWidth
         sx={{
             justifyContent: "flex-start", // align left
-            textTransform: "none",        // keep original text casing
+          textTransform: "none",        // keep original text casing
+          fontSize: {
+            sm: "10px",
+            md: "1rem",     // ~16px default
+          },
           }}
       >
         {text}
